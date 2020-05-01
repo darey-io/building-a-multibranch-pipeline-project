@@ -11,7 +11,9 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'sudo chown -R nobody /.npm'
+                sh 'pwd'
+                sh 'hostname'
+                sh 'hostname -i'
                 sh 'npm install'
             }
         }
