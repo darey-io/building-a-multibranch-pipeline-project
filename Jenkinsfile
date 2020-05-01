@@ -12,6 +12,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'echo This is building the code'
+                input message: 'Finished using the web site? (Click "Proceed" to continue)'
             }
         }
         stage('Test') {
@@ -25,6 +26,7 @@ pipeline {
             }
             steps {
                 sh 'echo This is Dev'
+                input message: 'Finished using the web site? (Click "Proceed" to continue)'
             }
         }
 
@@ -34,6 +36,7 @@ pipeline {
             }
             steps {
                 sh 'echo This is Dev'
+                input message: 'Finished using the web site? (Click "Proceed" to continue)'
             }
         }
 
@@ -44,6 +47,7 @@ pipeline {
             }
             steps {
                 sh 'echo This is Dev'
+                input message: 'Finished using the web site? (Click "Proceed" to continue)'
             }
         }
 
@@ -53,6 +57,7 @@ pipeline {
             }
             steps {
                 sh 'echo This is Production'
+                input message: 'Finished using the web site? (Click "Proceed" to continue)'
             }
         }
     }
