@@ -21,15 +21,35 @@ pipeline {
         }
         stage('Deliver for development') {
             when {
-                branch 'development' 
+                branch 'dev*' 
             }
             steps {
                 sh 'echo This is Dev'
             }
         }
+
+        stage('Deliver for HotFix') {
+            when {
+                branch 'hotfix*' 
+            }
+            steps {
+                sh 'echo This is Dev'
+            }
+        }
+
+
+        stage('Deliver for Integration') {
+            when {
+                branch 'stage*' 
+            }
+            steps {
+                sh 'echo This is Dev'
+            }
+        }
+
         stage('Deploy for production') {
             when {
-                branch 'production'  
+                branch 'master'  
             }
             steps {
                 sh 'echo This is Production'
