@@ -6,13 +6,12 @@ pipeline {
         }
     }
     environment {
-        CI = 'true'
+        CI = 'false'
     }
     stages {
         stage('Build') {
             steps {
                 sh 'echo This is building the code'
-                input message: 'Finished using the web site? (Click "Proceed" to continue)'
             }
         }
         stage('Test') {
